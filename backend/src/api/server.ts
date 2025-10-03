@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import summarizeRouter from "./routes/summarize";
+import summarizeRouter from "../routes/summarize";
 
 dotenv.config();
 
