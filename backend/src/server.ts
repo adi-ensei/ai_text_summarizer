@@ -22,6 +22,7 @@ app.use("/api", summarizeRouter);
 app.get("/health", (req, res) => {
   res.json({ status: "OK" });
 });
+app.get("/", (req, res) => res.send("Backend is running!"));
 
 if (process.env.NODE_ENV !== "production") {
   app.listen(PORT, () => {
