@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://ai-text-summarizer-psi.vercel.app/";
 
 type SummaryLength = "short" | "medium" | "long";
 
