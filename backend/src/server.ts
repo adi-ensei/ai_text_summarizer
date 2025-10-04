@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import summarizeRouter from "../routes/summarize";
+import summarizeRouter from "./routes/summarize";
 
 dotenv.config();
 
@@ -24,10 +24,19 @@ app.get("/health", (req, res) => {
 });
 app.get("/", (req, res) => res.send("Backend is running!"));
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+const startServer = async () => {
+  try {
+    if (process.env.NODE_ENV !== "production") {
+      app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+      });
+    }
+  } catch (error) {
+    console.error("Error Starting Server:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 export default app;
