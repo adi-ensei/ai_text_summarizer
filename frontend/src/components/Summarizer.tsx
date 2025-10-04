@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
 
-const API_URL = "https://ai-text-summarizer-psi.vercel.app/";
+const API_URL = "https://ai-text-summarizer-nu.vercel.app";
 
 type SummaryLength = "short" | "medium" | "long";
 
@@ -25,7 +25,7 @@ const Summarizer: React.FC = () => {
     setSummary("");
 
     try {
-      const response = await axios.post(`${API_URL}/summarize`, {
+      const response = await axios.post(`${API_URL}/api/summarize`, {
         text,
         length,
       });
